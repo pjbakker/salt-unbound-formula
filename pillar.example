@@ -9,6 +9,7 @@ unbound:
         options:
             # an option is config settings which can't have multiple clauses
             <option_name>: <option_value>
+        do_not_query_localhost: true
     stubzones:
         domain.tld:
             stub-addr: 8.8.4.4

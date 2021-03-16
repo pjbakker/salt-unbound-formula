@@ -29,6 +29,11 @@ server:
     domain-insecure: {{domain}}
     {%- endfor %}
 {%- endif -%}
+{%- if config.server.do_not_query_localhost is defined and
+       config.server.do_not_query_localhost is sameas false %}
+    # do-not-query-localhost
+    do-not-query-localhost: no
+{%- endif -%}
 {%- if config.server.local_zones is defined %}
     # local-zone
     {%- for zone in config.server.local_zones %}
